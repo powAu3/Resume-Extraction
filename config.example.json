@@ -1,0 +1,9 @@
+{
+    "token": "your_coze_api_token_here",
+    "workflow_id": "your_workflow_id_here",
+    "local_files": [
+        "path/to/resume1.pdf",
+        "path/to/resume2.docx"
+    ]
+}
+

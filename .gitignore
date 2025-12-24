@@ -1,0 +1,25 @@
+# 配置文件（包含敏感信息）
+config.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.so
+
+# 运行时生成的文件
+formatted_resumes.json
+response_debug.json
+人才引进简历_*.pptx
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
