@@ -277,12 +277,20 @@ def print_resume_summary(resumes: List[Dict]):
 def generate_ppt(resumes: List[Dict]):
     """调用 PPT 渲染器生成演示文稿"""
     try:
-        from ppt_renderer import PPTRenderer
-        renderer = PPTRenderer()
-        output_path = renderer.render_all(resumes)
-        print(f"\n🎨 PPT 已生成: {output_path}")
+        # 优先使用优化模板渲染器V2
+        from optimized_renderer_v2 import OptimizedTemplateRendererV2
+        template_path = os.path.join(os.path.dirname(__file__), "副本人才引进ppt.pptx")
+        
+        if os.path.exists(template_path):
+            print(f"\n🎨 使用优化模板渲染器V2")
+            renderer = OptimizedTemplateRendererV2(template_path)
+            output_path = renderer.render_all(resumes)
+            print(f"\n✅ PPT 已生成: {output_path}")
+        else:
+            print(f"\n⚠️ 模板文件不存在: {template_path}")
+            print("请确保 '副本人才引进ppt.pptx' 在当前目录下")
     except ImportError:
-        print("\n💡 提示: 确保 ppt_renderer.py 在同目录下")
+        print("\n💡 提示: 确保 optimized_renderer_v2.py 在同目录下")
 
 
 # ========== 主程序入口 ==========

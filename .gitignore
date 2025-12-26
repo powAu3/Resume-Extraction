@@ -26,6 +26,7 @@ response_debug.json
 *.pptx
 *.ppt
 *.txt
+*.xls
 # IDE
 .idea/
 .vscode/
@@ -35,3 +36,5 @@ response_debug.json
 # macOS
 .DS_Store
 
+#模版
+!副本人才引进ppt.pptx
